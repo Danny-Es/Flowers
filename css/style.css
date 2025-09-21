@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+*{
+    font-family: 'Poppins',cursive;
+}
+body{
+    color: azure;
+    width: 100%;
+    height: 82vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    /* padding-top: -30; */
+}
+
+/* ----- Botton girasol -----*/
+
+.flower-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* girasol */
+.girasol {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  text-decoration: none;
+  cursor: pointer;
+  animation: balanceo 3s infinite ease-in-out;
+}
+
+/* pétalos alrededor */
+.petalos {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    #f7c948 0deg 20deg,
+    transparent 20deg 30deg,
+    #f7c948 30deg 50deg,
+    transparent 50deg 60deg,
+    #f7c948 60deg 80deg,
+    transparent 80deg 90deg,
+    #f7c948 90deg 110deg,
+    transparent 110deg 120deg,
+    #f7c948 120deg 140deg,
+    transparent 140deg 150deg,
+    #f7c948 150deg 170deg,
+    transparent 170deg 180deg,
+    #f7c948 180deg 200deg,
+    transparent 200deg 210deg,
+    #f7c948 210deg 230deg,
+    transparent 230deg 240deg,
+    #f7c948 240deg 260deg,
+    transparent 260deg 270deg,
+    #f7c948 270deg 290deg,
+    transparent 290deg 300deg,
+    #f7c948 300deg 320deg,
+    transparent 320deg 330deg,
+    #f7c948 330deg 350deg,
+    transparent 350deg 360deg
+  );
+  animation: girar 10s linear infinite;
+  filter: drop-shadow(0 0 6px #ffd966);
+}
+
+/* centro del girasol */
+.centro {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #6a3b1e 40%, #3d1e0d 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 3px #000;
+  z-index: 2;
+  animation: glow 1.5s infinite alternate;
+}
+
+/* tallo */
+.tallo {
+  width: 16px;
+  height: 100px;
+  background: linear-gradient(to bottom, #2d7a32, #1a4d1e);
+  border-radius: 8px;
+  margin-top: -20px;
+  z-index: -1;
+}
+
+/* hojas */
+.hoja {
+  position: absolute;
+  width: 90px;
+  height: 50px;
+  background: linear-gradient(to right, #3fa34d, #2a7a39);
+  top: 430px;
+  animation: balanceo-hojas 4s infinite ease-in-out;
+}
+
+/* Hoja izquierda con curvatura hacia la derecha */
+.hoja-izq {
+  left: calc(50% - 88px);
+  border-radius: 50% 50% 0 50%;
+  transform: rotate(-40deg);
+}
+
+/* Hoja derecha con curvatura hacia la izquierda */
+.hoja-der {
+  right: calc(50% - 104px);
+  border-radius: 50% 50% 50% 0%; /* invertimos la curvatura */
+  transform: rotate(40deg);
+}
+
+/* animaciones */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 8px #ffd966;
+  }
+  100% {
+    box-shadow: 0 0 18px #ffeb99;
+  }
+}
+
+@keyframes girar {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes balanceo {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes balanceo-hojas {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+/* -----Fin del Botton girasol -----*/
+
+.botones{
+    padding: 9px;
+    border-radius: 80px;
+    background-color: transparent;
+    border: none;
+}
+
+.botones a{
+    background-color: #0a2be9;
+    padding: 9px;
+    border-radius: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    -ms-border-radius: 80px;
+    -o-border-radius: 80px;
+
+}
+
+.botones a:focus{
+    background-color: rgb(50, 194, 194);
+}
+
+.greetings{
+    font-size: 7rem;
+    font-weight: 900;
+}
+.greetings > span{
+    animation: glow 2.5s ease-in-out infinite;
+}
+@keyframes glow{
+    0%, 100%{
+        color: #fff;
+        text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
+    }
+    10%, 90%{
+        color: #111;
+        text-shadow: none;
+    }
+}
+.greetings > span:nth-child(2){
+    animation-delay: .2s ;
+}
+.greetings > span:nth-child(3){
+    animation-delay: .4s ;
+}
+.greetings > span:nth-child(4){
+    animation-delay: .6s;
+}
+.greetings > span:nth-child(5){
+    animation-delay: .8s;
+}
+.greetings > span:nth-child(6){
+    animation-delay: 1s;
+}
+
+.description{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.button a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
+}
+
+@media screen and (max-width:574px){
+    .greetings{
+        display: block;
+        font-size: 4rem;
+        font-weight: 800;
+        text-align: center;
+    }
+    .description{
+        font-size: 2rem;
+    }
+    
+    .button a{
+        font-size: 1rem;
+    }
+}
